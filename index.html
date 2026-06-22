@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="PathCheck — Career Alignment Evaluator. Discover how well your interests, skills, confidence, adaptability, commitment, and career opportunities align with your chosen career path." />
+  <title>PathCheck — Career Alignment Evaluator</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- LANDING -->
+  <section id="view-landing">
+    <div class="landing-content">
+      <div class="landing-wordmark">
+        <div class="wordmark-icon">P</div>
+        <span class="wordmark-text">PathCheck</span>
+      </div>
+      <p class="landing-subtitle">Career Alignment Evaluator</p>
+      <h1 class="landing-title">Know where<br>your path<br><em>truly leads.</em></h1>
+      <p class="landing-desc">
+        Discover how well your interests, skills, confidence, adaptability,
+        commitment, and career opportunities align with your chosen career path.
+      </p>
+      <div class="factor-pills">
+        <div class="factor-pill"><span class="factor-pill-letter">P</span>Interest &amp; Meaning</div>
+        <div class="factor-pill"><span class="factor-pill-letter">Q</span>Skill Fit</div>
+        <div class="factor-pill"><span class="factor-pill-letter">R</span>Confidence</div>
+        <div class="factor-pill"><span class="factor-pill-letter">S</span>Adaptability</div>
+        <div class="factor-pill"><span class="factor-pill-letter">T</span>Commitment</div>
+        <div class="factor-pill"><span class="factor-pill-letter">U</span>Market Demand</div>
+      </div>
+      <button id="start-btn" class="btn-start" type="button">
+        Start Assessment
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 8h10M9 4l4 4-4 4"/>
+        </svg>
+      </button>
+      <p class="landing-footnote">Powered by propositional logic · No data stored · 6 career fields</p>
+    </div>
+    <div class="landing-credit">Designed by Irvin John J. Parulan · BSCS 1-5</div>
+  </section>
+
+  <!-- FIELD SELECTION -->
+  <section id="view-field" class="hidden">
+    <div class="field-select-wrap">
+      <div class="field-select-header">
+        <div class="landing-wordmark" style="justify-content:center;margin-bottom:0">
+          <div class="wordmark-icon">P</div>
+          <span class="wordmark-text">PathCheck</span>
+        </div>
+        <h2 class="field-select-title">Choose your career field</h2>
+        <p class="field-select-sub">PathCheck will tailor your assessment based on research-grounded factors for your chosen field.</p>
+      </div>
+      <div class="field-grid" id="field-grid"></div>
+      <p class="field-citation-note">Questions are grounded in peer-reviewed career development research. Citations available in project documentation.</p>
+    </div>
+  </section>
+
+  <!-- ASSESSMENT -->
+  <section id="view-assessment" class="hidden">
+    <header class="assess-header">
+      <div class="assess-brand">
+        <div class="wordmark-icon sm">P</div>
+        <span class="wordmark-text">PathCheck</span>
+      </div>
+      <div class="assess-center">
+        <span class="assess-field-label" id="assess-field-label"></span>
+      </div>
+      <div class="assess-progress-wrap">
+        <div class="assess-progress-bar">
+          <div class="assess-progress-fill" id="progress-fill"></div>
+        </div>
+        <span class="assess-progress-label" id="progress-label">1 of 6</span>
+      </div>
+    </header>
+
+    <div class="assess-body">
+      <div class="question-stage" id="question-stage">
+        <div class="question-card" id="question-card">
+          <div class="question-variable" id="q-variable"></div>
+          <div class="question-factor" id="q-factor"></div>
+          <p class="question-text" id="q-text"></p>
+          <p class="question-hint" id="q-hint"></p>
+          <div class="question-actions">
+            <button class="btn-answer btn-yes" id="btn-yes" type="button">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 10l5 5 7-7"/>
+              </svg>
+              Yes
+            </button>
+            <button class="btn-answer btn-no" id="btn-no" type="button">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 5l10 10M15 5L5 15"/>
+              </svg>
+              No
+            </button>
+          </div>
+          <p class="keyboard-hint">Press <kbd>Y</kbd> for Yes · <kbd>N</kbd> for No</p>
+        </div>
+      </div>
+      <div class="answer-trail" id="answer-trail"></div>
+    </div>
+  </section>
+
+  <!-- RESULT -->
+  <section id="view-result" class="hidden">
+    <div class="result-header">
+      <p class="result-eyebrow">Career Alignment Report</p>
+      <h2 class="result-heading">Your PathCheck Result</h2>
+    </div>
+    <div id="result-verdict"></div>
+    <div id="result-variables"></div>
+    <div id="result-logic"></div>
+    <div id="result-explanation"></div>
+    <div class="result-footer">
+      <button id="restart-btn" type="button">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M13.5 8A5.5 5.5 0 1 1 8 2.5"/><path d="M13.5 2.5v3h-3"/>
+        </svg>
+        Start New Session
+      </button>
+    </div>
+    <div class="result-credit">Designed by Irvin John J. Parulan · BSCS 1-5</div>
+  </section>
+
+  <script src="js/logic.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
