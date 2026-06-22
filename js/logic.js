@@ -1,7 +1,5 @@
 // ============================================================
 // PathCheck — Logic Engine
-// Variables P–U are consistent across all career fields.
-// Questions are field-specific, grounded in cited research.
 // ============================================================
 
 const Logic = {
